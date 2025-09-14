@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Iron Man HUD</title>
+<style>
+    body {
+        margin: 0;
+        background-color: black;
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .background-image {
+        width: 95%;
+        max-width: 1300px;
+        height: auto;
+        display: block;
+        position: relative;
+    }
+
+    .overlay-button {
+        position: absolute;
+        width: 22%;
+        max-width: 250px;
+        top: calc(50% + 8.5cm);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .overlay-button img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.2s;
+    }
+
+    .overlay-button:hover img {
+        transform: scale(1.1);
+    }
+
+    .left-button {
+        position: absolute;
+        width: 40%;
+        max-width: 520px;
+        top: calc(50% + 9cm);
+        left: calc(50% - 20cm);
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 2;
+    }
+
+    .left-button a {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .left-button img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.2s;
+    }
+
+    .left-button span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        font-weight: bold;
+        font-size: 5rem;
+        color: #ffffff;
+    }
+
+    .left-button:hover img {
+        transform: scale(1.1);
+    }
+
+    .current-time {
+        position: absolute;
+        top: calc(50% + 16cm);
+        left: calc(50% - 7cm);
+        transform: translateY(-50%);
+        font-size: 5rem;
+        color: #FFFFFF;
+        font-weight: bold;
+        font-family: monospace;
+        text-align: center;
+        z-index: 2;
+    }
+
+    .top-right-image {
+        position: absolute;
+        top: 6cm; 
+        right: 4cm;
+        width: 25vw;
+        height: auto;
+        display: block;
+        z-index: 2;
+    }
+
+    .top-right-left-image {
+        position: absolute;
+        top: 6cm;
+        right: 24cm;
+        width: 8vw;  
+        height: auto;
+        display: block;
+        cursor: pointer;
+        transition: transform 0.3s; 
+        z-index: 2;
+    }
+
+    .top-right-left-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transform-style: preserve-3d; 
+        animation: flipRotate 10s linear infinite; 
+    }
+
+    .top-right-left-image:hover {
+        transform: scale(1.1); 
+    }
+
+    @keyframes flipRotate {
+        0%   { transform: rotateY(0deg); }
+        50%  { transform: rotateY(180deg); }
+        100% { transform: rotateY(360deg); }
+    }
+
+    .bottom-right-image {
+        position: absolute;
+        bottom: 2cm;
+        right: 2cm;
+        width: 20vw;
+        height: auto;
+        display: block;
+        cursor: pointer;
+        transition: transform 0.3s;
+        z-index: 2;
+    }
+
+    .bottom-right-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .bottom-right-image:hover {
+        transform: scale(1.1);
+    }
+</style>
+</head>
+<body>
+
+    <img src="k1.jpg" alt="Iron Man Background" class="background-image">
+
+    <a href="recator.html" class="overlay-button">
+        <img src="s1.png" alt="Arc Reactor Button">
+    </a>
+
+    <!-- Left button linking to cal.py -->
+    <div class="left-button">
+        <a href="flowchart.html"><img src="p1.png" alt="Left Button">
+            <span>Z.E.N.I</span>
+        </a>
+    </div>
+
+    <div class="current-time" id="currentTime">00:00:00</div>
+
+    <a href="suit1.html" class="top-right-image">
+        <img src="suit1.png" alt="Suit Top Right">
+    </a>
+
+    <a href="suits_arrange.html" class="top-right-left-image">
+        <img src="i1.webp" alt="i1 Image">
+    </a>
+
+    <a href="mer1.html" class="bottom-right-image">
+        <img src="merge1.png" alt="Merge Image">
+    </a>
+
+</body>
+</html>
+
